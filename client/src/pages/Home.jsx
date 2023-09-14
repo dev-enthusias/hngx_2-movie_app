@@ -21,7 +21,7 @@ export async function loader() {
 
 export default function Home() {
   const data = useLoaderData();
-  console.log(data);
+
   return (
     <>
       <header className='px-24 h-[90vh] relative'>
@@ -47,7 +47,13 @@ export default function Home() {
           </p>
         </div>
 
-        <MovieCard />
+        {/* Movie cards */}
+        <div className='grid sm:grid-cols-2 lg:grid-cols-4 place-items-center gap-y-24 gap-x-4'>
+          {data.results.map((data, i) => {
+            console.log(data);
+            return <MovieCard key={data.id} data={data} />;
+          })}
+        </div>
       </main>
 
       <Footer />

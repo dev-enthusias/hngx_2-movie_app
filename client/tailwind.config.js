@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         DMsans: ['DM Sans'],
+        poppins: ['Poppins'],
       },
     },
   },
