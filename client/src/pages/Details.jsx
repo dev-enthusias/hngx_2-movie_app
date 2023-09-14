@@ -1,4 +1,4 @@
-import MovieDetailsNav from '../components/MovieDetailsNav';
+import MovieDetailsNav from '../components/Sidebar';
 import MovieDetails from '../components/MovieDetails';
 
 export default function Details() {
