@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 import Navbar from '../components/Navbar';
 import Pagination from '../components/Pagination';
@@ -49,9 +49,13 @@ export default function Home() {
 
         {/* Movie cards */}
         <div className='grid sm:grid-cols-2 lg:grid-cols-4 place-items-center gap-y-24 gap-x-4'>
-          {data.results.map((data, i) => {
+          {data.results.map(data => {
             console.log(data);
-            return <MovieCard key={data.id} data={data} />;
+            return (
+              <Link key={data.id} to={`/movie/details/${data.id}`}>
+                <MovieCard data={data} />
+              </Link>
+            );
           })}
         </div>
       </main>

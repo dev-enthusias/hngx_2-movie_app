@@ -8,7 +8,7 @@ import projector from '../assets/Projector.svg';
 import tvShow from '../assets/TVShow.svg';
 import calendar from '../assets/Calendar.svg';
 
-export default function MovieDetailsNav() {
+export default function Sidebar() {
   const [activeLink, setActiveLink] = useState('movie');
 
   const handleClick = id => {
@@ -16,10 +16,10 @@ export default function MovieDetailsNav() {
   };
 
   return (
-    <nav className='w-[226px] rounded-r-[45px] border border-gray-600 flex flex-col gap-y-20 items-center pt-12 pb-16 font-poppins'>
+    <aside className='min-w-[226px] rounded-r-[45px] border border-gray-600 flex flex-col gap-y-20 items-center pt-12 pb-10'>
       <div className='flex gap-x-6 items-center'>
         <img src={logo} alt='logo' className='w-12 h-12' />
-        <span className='text-2xl leading-6'>MovieBox</span>
+        <span className='text-2xl font-DMsans font-bold leading-6'>MovieBox</span>
       </div>
 
       <ul className='flex flex-col'>
@@ -33,7 +33,7 @@ export default function MovieDetailsNav() {
             }`}
           >
             <img src={home} alt='home icon' />
-            <span className='font-semibold text-xl text-gray-500'>Home</span>
+            <span className='font-semibold text-lg text-gray-500'>Home</span>
           </Link>
         </li>
 
@@ -47,7 +47,7 @@ export default function MovieDetailsNav() {
             }`}
           >
             <img src={projector} alt='home icon' />
-            <span className='font-semibold text-xl text-gray-500'>Movies</span>
+            <span className='font-semibold text-lg text-gray-500'>Movies</span>
           </Link>
         </li>
 
@@ -61,7 +61,7 @@ export default function MovieDetailsNav() {
             }`}
           >
             <img src={tvShow} alt='home icon' />
-            <span className='font-semibold text-xl text-gray-500'>
+            <span className='font-semibold text-lg text-gray-500'>
               TV Series
             </span>
           </Link>
@@ -77,7 +77,7 @@ export default function MovieDetailsNav() {
             }`}
           >
             <img src={calendar} alt='home icon' />
-            <span className='font-semibold text-xl text-gray-500'>
+            <span className='font-semibold text-lg text-gray-500'>
               Upcoming
             </span>
           </Link>
@@ -104,10 +104,10 @@ export default function MovieDetailsNav() {
             }`}
           >
             <img src={logout} alt='home icon' />
-            <span className='font-semibold text-xl text-gray-500'>Log Out</span>
+            <span className='font-semibold text-lg text-gray-500'>Log Out</span>
           </Link>
         </li>
       </ul>
-    </nav>
+    </aside>
   );
 }

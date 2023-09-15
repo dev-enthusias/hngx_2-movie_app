@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home, { loader as homeLoader } from './pages/Home';
-import Details from './pages/Details';
+import Details, { loader as detailsLoader } from './pages/Details';
 import Error from './pages/Error';
 import './index.css';
 
@@ -14,8 +14,9 @@ const router = createBrowserRouter([
     errorElement: <Error />,
   },
   {
-    path: '/movie/details',
+    path: '/movie/details/:id',
     element: <Details />,
+    loader: detailsLoader,
   },
 ]);
 
