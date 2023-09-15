@@ -4,7 +4,7 @@ import png from '../assets/Png.svg';
 
 export default function Description() {
   return (
-    <article className='w-[404px] text-white'>
+    <article className='w-full sm:w-[404px] text-white'>
       <h1 className='text-5xl mb-4'>John Wick 3 : Parabellum</h1>
 
       <div className='flex gap-x-8 mb-4'>
@@ -18,7 +18,7 @@ export default function Description() {
         </div>
       </div>
 
-      <p className='text-sm font-medium w-[303px] mb-4'>
+      <p className='text-sm font-medium max-[350px]:w-full  w-[303px] mb-4'>
         John Wick is on the run after killing a member of the international
         assassins' guild, and with a $14 million price tag on his head, he is
         the target of hit men and women everywhere.

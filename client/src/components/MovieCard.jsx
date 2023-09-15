@@ -1,52 +1,41 @@
+import { useState } from 'react';
+
+import FavIcon from '../components/FavIcon';
 import imbd from '../assets/IMBD.svg';
 import png from '../assets/Png.svg';
-import heart from '../assets/Heart.svg';
 
 export default function MovieCard({ data }) {
+  const [liked, setLiked] = useState(false);
+
   const voteAverage = data.vote_average * 10;
 
-  // Format Date
-  const months = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'April',
-    'May',
-    'June',
-    'July',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ];
-
-  const date = data.release_date;
-  const timeStamp = new Date(date);
-  const year = timeStamp.getFullYear();
-  const month = timeStamp.getMonth();
-  const formattedDate = `${months[month]}, ${year}`;
+  // Handle fav icon click
+  const handleLikeClick = e => {
+    e.preventDefault();
+    console.log('clicked');
+    setLiked(!liked);
+  };
 
   return (
-    <article className='font-bold relative' data-testid='movie-card'>
-      <div className='h-96 mb-3'>
+    <article className='font-bold relative w-52' data-testid='movie-card'>
+      <div className='w-full mb-3'>
         <img
           src={`https://image.tmdb.org/t/p/original${data.poster_path}`}
           alt='movie poster'
-          className='h-full object-cover'
+          className='w-full h-auto'
           data-testid='movie-poster'
         />
       </div>
 
       <div className='w-8 h-8 rounded-full bg-white opacity-50 absolute top-4 right-4 flex items-center justify-center '>
-        <img src={heart} alt='favourite icon' />
+        <FavIcon liked={liked} onClick={handleLikeClick} />
       </div>
 
       <p
         className='text-xs text-gray-400 mb-3'
         data-testid='movie-release-date'
       >
-        {formattedDate}
+        {data.release_date}
       </p>
 
       <p className='text-gray-900 text-lg mb-3' data-testid='movie-title'>

@@ -6,7 +6,7 @@ import ticket from '../assets/Tickets.svg';
 import list from '../assets/List.svg';
 import rectangle from '../assets/Rectangle.jpg';
 
-export default function MovieDetails() {
+export default function MovieDetails({ data }) {
   return (
     <div className='flex-grow px-9 py-10 '>
       <div className='relative mb-7'>
@@ -23,7 +23,11 @@ export default function MovieDetails() {
           <div className='mb-5'>
             <div className='flex gap-x-4 mb-6'>
               <p className='text-xl font-bold text-gray-500'>
-                Top Gun: Maverick • 2022 • PG-13 • 2h 10m
+                <span data-testid='movie-title'>{data.original_title}</span> •{' '}
+                <span data-testid='movie-release-date'>
+                  {data.release_date}
+                </span>{' '}
+                • <span data-testid='movie-runtime'>{data.runtime}m</span>
               </p>
               <span className='py-1 px-4 rounded-full border border-gray-300 text-pink-700 font-medium text-sm'>
                 Action
@@ -32,11 +36,8 @@ export default function MovieDetails() {
                 Drama
               </span>
             </div>
-            <p className='text-gray-700'>
-              After thirty years, Maverick is still pushing the envelope as a
-              top naval aviator, but must confront ghosts of his past when he
-              leads TOP GUN's elite graduates on a mission that demands the
-              ultimate sacrifice from those chosen to fly it.
+            <p className='text-gray-700' data-testid='movie-overview'>
+              {data.overview}
             </p>
           </div>
 

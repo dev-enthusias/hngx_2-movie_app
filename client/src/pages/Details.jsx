@@ -19,7 +19,7 @@ export default function Details() {
   return (
     <div className='flex font-poppins'>
       <Sidebar />
-      <MovieDetails />
+      <MovieDetails data={detailsData} />
     </div>
   );
 }

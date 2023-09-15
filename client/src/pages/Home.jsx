@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <>
-      <header className='px-24 h-[90vh] relative'>
+      <header className='px-4 sm:px-14 lg:px-16 h-screen relative'>
         <Navbar />
         <Description />
         <Pagination />
@@ -35,12 +35,12 @@ export default function Home() {
         />
       </header>
 
-      <main className='px-24 pt-16 mb-36'>
+      <main className='px-4 lg:px-16 pt-16 mb-36'>
         {/* Title */}
         <div className='flex justify-between items-center mb-11'>
-          <h2 className='font-bold text-4xl'>Top Rated Movie</h2>
+          <h2 className='font-bold text-xl lg:text-4xl'>Top Rated Movie</h2>
           <p className='flex items-center'>
-            <span className='text-lg text-pink-700 leading-[18px]'>
+            <span className='text-base lg:text-lg text-pink-700 leading-[18px]'>
               See more
             </span>
             <img src={arrowRight} alt='icon' />
@@ -48,8 +48,8 @@ export default function Home() {
         </div>
 
         {/* Movie cards */}
-        <div className='grid sm:grid-cols-2 lg:grid-cols-4 place-items-center gap-y-24 gap-x-4'>
-          {data.results.map(data => {
+        <div className='grid gap-x-4 grid-cols-1 xs:grid-cols-2 md:max-[1040px]:grid-cols-3 lg:grid-cols-4 justify-items-center gap-y-12 sm:gap-y-24'>
+          {data.results.slice(0, 10).map(data => {
             console.log(data);
             return (
               <Link key={data.id} to={`/movie/details/${data.id}`}>

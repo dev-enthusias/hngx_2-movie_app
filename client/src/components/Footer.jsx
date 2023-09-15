@@ -30,7 +30,7 @@ export default function Footer() {
           </Link>
         </li>
       </ul>
-      <ul className='mb-9 flex items-center gap-x-12 font-bold text-gray-900'>
+      <ul className='mb-9 flex flex-col sm:flex-row items-center gap-y-8 sm:gap-x-12 font-bold text-gray-900'>
         <li>
           <Link>Condition of use</Link>
         </li>
