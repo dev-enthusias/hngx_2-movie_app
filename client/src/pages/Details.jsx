@@ -17,7 +17,7 @@ export default function Details() {
   console.log(detailsData);
 
   return (
-    <div className='flex font-poppins'>
+    <div className='flex font-poppins max-w-[1440px] m-auto'>
       <Sidebar />
       <MovieDetails data={detailsData} />
     </div>

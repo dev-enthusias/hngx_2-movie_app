@@ -4,7 +4,7 @@ import png from '../assets/Png.svg';
 
 export default function Description() {
   return (
-    <article className='w-full sm:w-[404px] text-white'>
+    <article className='w-full sm:w-[404px] text-white absolute left-4 sm:left-14 lg:left-16 top-1/2 -translate-y-1/2'>
       <h1 className='text-5xl mb-4'>John Wick 3 : Parabellum</h1>
 
       <div className='flex gap-x-8 mb-4'>

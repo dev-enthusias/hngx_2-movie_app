@@ -50,9 +50,8 @@ export default function Home() {
         {/* Movie cards */}
         <div className='grid gap-x-4 grid-cols-1 xs:grid-cols-2 md:max-[1040px]:grid-cols-3 lg:grid-cols-4 justify-items-center gap-y-12 sm:gap-y-24'>
           {data.results.slice(0, 10).map(data => {
-            console.log(data);
             return (
-              <Link key={data.id} to={`/movie/details/${data.id}`}>
+              <Link key={data.id} to={`/movies/${data.id}`}>
                 <MovieCard data={data} />
               </Link>
             );
