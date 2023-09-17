@@ -35,7 +35,7 @@ export default function MovieCard({ data }) {
         className='text-xs text-gray-400 mb-3'
         data-testid='movie-release-date'
       >
-        {data.release_date}
+        {new Date(data.release_date).toUTCString()}
       </p>
 
       <p className='text-gray-900 text-lg mb-3' data-testid='movie-title'>

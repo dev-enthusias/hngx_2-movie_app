@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <>
       <header className='px-4 sm:px-14 lg:px-16 h-screen relative w-full'>
-        <Navbar />
+        <Navbar apiResult={data} />
         <Description />
         <Pagination />
         <img

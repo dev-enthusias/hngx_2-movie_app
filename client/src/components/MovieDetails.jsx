@@ -31,9 +31,9 @@ export default function MovieDetails({ data }) {
                 <p className='inline'>
                   <span data-testid='movie-title'>{data.original_title}</span> •{' '}
                   <span data-testid='movie-release-date'>
-                    {data.release_date}
+                    {new Date(data.release_date).toUTCString()}
                   </span>{' '}
-                  • <span data-testid='movie-runtime'>{data.runtime}m</span>
+                  • <span data-testid='movie-runtime'>{data.runtime}</span>
                 </p>
                 <span className='py-1 px-4 rounded-full border border-gray-300 text-pink-700 font-medium text-sm ml-8'>
                   Action
