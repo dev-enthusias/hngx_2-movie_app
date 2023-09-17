@@ -24,14 +24,14 @@ export default function Home() {
 
   return (
     <>
-      <header className='px-4 sm:px-14 lg:px-16 h-screen relative'>
+      <header className='px-4 sm:px-14 lg:px-16 h-screen relative w-full'>
         <Navbar />
         <Description />
         <Pagination />
         <img
           src={poster}
           alt='Movie poster'
-          className='absolute top-0 left-0 -z-10 h-full object-cover'
+          className='absolute top-0 left-0 -z-10 h-full w-full object-cover'
         />
       </header>
 
